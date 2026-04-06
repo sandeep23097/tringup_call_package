@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(grep -rn \"from 'ioredis'\\\\|from 'redis'\" /d/telephony/webtrit_phone-main/backend/src/ && grep -rn \"redis\" /d/telephony/webtrit_phone-main/backend/src/signaling/handlers/call.ts | head -5)",
+      "Bash(cd /d/telephony/webtrit_phone-main/backend && npm install 2>&1 | tail -20)",
+      "Bash(ls /d/telephony/webtrit_phone-main/backend/.env* 2>/dev/null && cat /d/telephony/webtrit_phone-main/backend/.env.example 2>/dev/null)",
+      "Bash(cp .env.example .env && npx tsc --noEmit 2>&1)",
+      "Bash(npx tsc:*)",
+      "Bash(node -e \"const b=require\\('bcryptjs'\\); b.hash\\('test1234', 10\\).then\\(h => console.log\\(h\\)\\);\")",
+      "Bash(sleep 2 && curl -s http://localhost:3000/api/v1/system/info 2>&1 | head -c 300)",
+      "Bash(jobs -l 2>/dev/null; ps aux 2>/dev/null | grep -i \"ts-node\\\\|node\" | grep -v grep | head -5)",
+      "Bash(SESSION=1678541032581353\nHANDLE=1487714547216153\n\ncurl -s --max-time 5 -X POST \"http://aws.edumation.in:8889/janus/$SESSION/$HANDLE\" \\\\\n  -H \"Content-Type: application/json\" \\\\\n  -d \"{\\\\\"janus\\\\\":\\\\\"message\\\\\",\\\\\"body\\\\\":{\\\\\"request\\\\\":\\\\\"register\\\\\",\\\\\"username\\\\\":\\\\\"testuser1\\\\\"},\\\\\"transaction\\\\\":\\\\\"t3\\\\\"}\" 2>&1)",
+      "Bash(curl -s http://localhost:3000/health && echo \"\")",
+      "Bash(cd D:/telephony/webtrit_phone-main && npm create vite@latest admin_frontend -- --template react 2>&1)",
+      "Bash(cd D:/telephony/webtrit_phone-main/admin_frontend && npm install && npm install react-router-dom axios recharts 2>&1)",
+      "Bash(cd D:/telephony/webtrit_phone-main/admin_frontend && npm run build 2>&1)",
+      "Bash(find \"D:\\\\telephony\\\\webtrit_phone-main\\\\lib\" -type f -name \"*.dart\" | xargs grep -l \"onBackgroundMessage\\\\|backgroundMessageHandler\\\\|@pragma.*vm:entry-point\" | head -20)",
+      "Bash(netstat -ano)",
+      "Bash(xargs -r taskkill //F //PID)",
+      "Bash(taskkill //F //PID 90248 2>&1)",
+      "Bash(find \"D:\\\\telephony\\\\webtrit_phone-main\" -name \"*.dart\" -type f -exec grep -l \"WebtritSignalingClient\\\\|IncomingCallEvent\" {} \\\\; | head -10)",
+      "Bash(find /d/telephony/webtrit_phone-main -type f -name \"*.dart\" | xargs grep -l \"class.*Lines\\\\|linesCount\\\\|line:\" | head -10)",
+      "Bash(mkdir -p \"D:/telephony/tringup_call/lib/src/stubs\")",
+      "Read(//d/telephony/**)",
+      "Bash(grep -n \"CallActiveScaffold\\\\|CallInitScaffold\\\\|AcknowledgeDialog\" \"D:/telephony/webtrit_phone-main/lib/features/call/call.dart\" 2>/dev/null | head -20; grep -rn \"export.*acknowledge\" \"D:/telephony/webtrit_phone-main/lib/widgets/\" 2>/dev/null | head -10)",
+      "Bash(cd \"D:/telephony/tringup_call\" && flutter pub get 2>&1 | tail -20)",
+      "Bash(cd \"D:/telephony/tringup_call\" && flutter analyze 2>&1)"
+    ]
+  }
+}

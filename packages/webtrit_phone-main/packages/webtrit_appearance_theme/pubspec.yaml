@@ -1,0 +1,19 @@
+name: webtrit_appearance_theme
+description: "A Flutter package for managing appearance themes."
+version: 0.0.1
+
+environment:
+  sdk: ^3.8.0
+
+dependencies:
+  freezed_annotation: ^3.1.0
+  json_annotation: ^4.9.0
+
+dev_dependencies:
+  flutter_lints: ^6.0.0
+  freezed: ^3.2.3
+  build_runner: ^2.10.1
+  json_serializable: ^6.11.1
+  webtrit_analysis:
+    git: https://github.com/WebTrit/webtrit_analysis.git
+  test: ^1.26.3

@@ -1,0 +1,1 @@
+enum IceMediaType { video, audio }

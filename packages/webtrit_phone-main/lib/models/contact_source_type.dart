@@ -1,0 +1,1 @@
+enum ContactSourceType { local, external }

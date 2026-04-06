@@ -1,0 +1,100 @@
+{
+  "project_info": {
+    "project_number": "843721674651",
+    "project_id": "corncall-e7067",
+    "storage_bucket": "corncall-e7067.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:843721674651:android:d5dd8f1e0defc911c01b3e",
+        "android_client_info": {
+          "package_name": "com.criteriontech.corncallnew"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "843721674651-2o25e3e5cg8potb53fc1qhf20qv5aqth.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.criteriontech.corncallnew",
+            "certificate_hash": "d17cac0690e7e0db40c9bed477d8abbf91aef6ad"
+          }
+        },
+        {
+          "client_id": "843721674651-40pa2kfajlbdnsjgbq7lq1tdlajf2g8j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.criteriontech.corncallnew",
+            "certificate_hash": "f04d29476dfd20af93f0c8c0de1ecec852b25d41"
+          }
+        },
+        {
+          "client_id": "843721674651-fqrv5tko5016fofs4v4maf3as99e03dt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.criteriontech.corncallnew",
+            "certificate_hash": "f98516d90500a61d11dcffb625a36fd9bb7f187f"
+          }
+        },
+        {
+          "client_id": "843721674651-nmbq3l8rp3i135ppo3d3av0b6uinmqkc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.criteriontech.corncallnew",
+            "certificate_hash": "2e00016896f9dbe08f09065bdd4322e4619be3bf"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCb2g5nKLC49S1mrfjXauyY_Y0rU8mYi7k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:843721674651:android:dc7621fe1b08e796c01b3e",
+        "android_client_info": {
+          "package_name": "com.example.corncalladmin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCb2g5nKLC49S1mrfjXauyY_Y0rU8mYi7k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:843721674651:android:77e42c1c8a10892bc01b3e",
+        "android_client_info": {
+          "package_name": "com.webtrit.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCb2g5nKLC49S1mrfjXauyY_Y0rU8mYi7k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

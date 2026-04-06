@@ -1,0 +1,29 @@
+name: webtrit_callkeep_ios
+description: iOS implementation of the webtrit_callkeep plugin
+version: 0.0.0+0
+publish_to: none
+
+environment:
+  sdk: ^3.8.0
+
+flutter:
+  plugin:
+    implements: webtrit_callkeep
+    platforms:
+      ios:
+        pluginClass: WebtritCallkeepPlugin
+        dartPluginClass: WebtritCallkeep
+
+dependencies:
+  flutter:
+    sdk: flutter
+  uuid: ^4.5.2
+  webtrit_callkeep_platform_interface:
+    path: ../webtrit_callkeep_platform_interface
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  pigeon: ^26.0.3
+  plugin_platform_interface: ^2.1.8
+  very_good_analysis: ^10.0.0

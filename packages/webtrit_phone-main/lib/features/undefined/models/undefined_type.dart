@@ -1,0 +1,1 @@
+enum UndefinedType { deeplinkConfigurationInvalid, stackScreenNotSupported }

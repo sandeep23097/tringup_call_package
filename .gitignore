@@ -1,0 +1,27 @@
+# Binary assets (LFS stubs — not needed by the package)
+*.mp3
+*.wav
+*.aac
+
+# Flutter / Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+build/
+*.iml
+*.log
+
+# Pub
+pubspec.lock
+packages/tringup_call/pubspec.lock
+packages/webtrit_phone-main/pubspec.lock
+
+# IDE
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

@@ -1,0 +1,1 @@
+enum LoginFlavor { login, embedded }

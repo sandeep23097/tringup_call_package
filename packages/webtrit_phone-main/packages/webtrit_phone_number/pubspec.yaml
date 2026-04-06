@@ -1,0 +1,16 @@
+name: webtrit_phone_number
+description: Flutter package for processing phone numbers.
+version: 0.0.1
+
+environment:
+  sdk: ^3.8.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  lints: ^6.0.0

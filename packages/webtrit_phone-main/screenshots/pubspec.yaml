@@ -1,0 +1,33 @@
+name: screenshots
+description: WebTrit Phone screenshots application.
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.2.0 <4.0.0"
+  flutter: ^3.16.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  webtrit_phone:
+    path: ..
+  mocktail: ^1.0.4
+
+dev_dependencies:
+  integration_test:
+    sdk: flutter
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/callkeep/
+    - assets/login/
+    - assets/ringtones/
+    - assets/themes/

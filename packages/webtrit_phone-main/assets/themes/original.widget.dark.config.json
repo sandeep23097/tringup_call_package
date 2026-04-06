@@ -1,0 +1,92 @@
+{
+  "fonts": {
+    "fontFamily": "Montserrat"
+  },
+  "imageAssets": {
+    "defaultPlaceholderImage": {
+      "uri": "asset://assets/images/secondary_onboarding_logo.svg"
+    },
+    "leadingAvatarStyle": {
+      "backgroundColor": "#EEF3F6",
+      "radius": 20.0,
+      "initialsTextStyle": {
+        "fontFamily": "Montserrat",
+        "fontSize": null,
+        "fontWeight": {
+          "weight": 700
+        },
+        "color": "#1F618F"
+      },
+      "placeholderIcon": {
+        "codePoint": "0xe497",
+        "fontFamily": "MaterialIcons",
+        "matchTextDirection": false
+      },
+      "loading": {
+        "showByDefault": false,
+        "padding": {
+          "left": 2.0,
+          "top": 2.0,
+          "right": 2.0,
+          "bottom": 2.0
+        },
+        "strokeWidth": 1.0
+      },
+      "smartIndicator": {
+        "backgroundColor": "#F8FBFD",
+        "icon": {
+          "codePoint": "0xe491",
+          "fontFamily": "MaterialIcons",
+          "matchTextDirection": false
+        },
+        "sizeFactor": 0.4
+      },
+      "registeredBadge": {
+        "registeredColor": null,
+        "unregisteredColor": null,
+        "sizeFactor": 0.2
+      },
+      "presenceBadge": {
+        "availableColor": null,
+        "unavailableColor": null,
+        "sizeFactor": 0.325 
+      }
+    }
+  },
+  "dialog": {
+    "snackBar": {
+      "successBackgroundColor": "#75B943",
+      "errorBackgroundColor": "#E74C3C",
+      "infoBackgroundColor": "#494949",
+      "warningBackgroundColor": "#F95A14"
+    }
+  },
+  "statuses": {
+    "registrationStatuses": {
+      "online": "#75B943",
+      "offline": "#EEF3F6"
+    },
+    "calStatuses": {
+      "connectivityNone": "#E74C3C",
+      "connectError": "#E74C3C",
+      "appUnregistered": "#494949",
+      "connectIssue": "#E74C3C",
+      "inProgress": "#123752",
+      "ready": "#75B943"
+    }
+  },
+  "decorationConfig": {
+    "primaryGradientColorsConfig": {
+      "colors": [
+        {
+          "color": "#5CACE3",
+          "blend": true
+        },
+        {
+          "color": "#123752",
+          "blend": true
+        }
+      ]
+    }
+  }
+}
