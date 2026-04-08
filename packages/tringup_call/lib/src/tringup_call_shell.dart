@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:livekit_client/livekit_client.dart' as lk;
 import 'package:webtrit_callkeep/webtrit_callkeep.dart';
+import 'package:webtrit_phone/extensions/extensions.dart';
 import 'package:webtrit_phone/features/call/call.dart';
 import 'package:webtrit_phone/features/call/view/call_active_thumbnail.dart';
 import 'package:webtrit_phone/models/models.dart';
@@ -17,6 +18,7 @@ import 'package:webtrit_phone/widgets/widgets.dart';
 import 'default_call_screen.dart';
 import 'pip/tringup_pip_manager.dart';
 import 'tringup_call_config.dart';
+import 'tringup_call_diagnostics.dart';
 import 'tringup_call_screen_api.dart';
 import 'tringup_call_theme.dart';
 import 'tringup_call_status.dart';
@@ -264,7 +266,7 @@ class _TringupCallShellState extends State<TringupCallShell>
     if (kDebugMode) debugPrint('$_tag build');
     return MultiBlocListener(
       listeners: [
-        // Log EVERY state change for debugging.
+        // Log EVERY state change for debugging + update diagnostics.
         BlocListener<CallBloc, CallState>(
           listener: (context, state) {
             final svc = state.callServiceState;
@@ -281,6 +283,21 @@ class _TringupCallShellState extends State<TringupCallShell>
               // ignore: avoid_print
               print('$_tag [SIGNALING ERROR] $err');
             }
+
+            // Feed live status into TringupCallDiagnostics for host-app inspection.
+            TringupCallDiagnostics.instance.updateFromShell(
+              TringupCallDiagnosticsStatus(
+                isSignalingConnected: state.isSignalingEstablished,
+                isUserRegistered:
+                    svc.registration?.status?.isRegistered == true,
+                signalingStatusLabel:
+                    _signalingLabel(svc.signalingClientStatus),
+                registrationStatusLabel:
+                    _registrationLabel(svc.registration?.status),
+                callTokenPresent:
+                    TringupCallDiagnostics.instance.status.callTokenPresent,
+              ),
+            );
           },
         ),
         if (kDebugMode)
@@ -1303,6 +1320,35 @@ class _VideoAwareThumbnail extends StatelessWidget {
       ],
     );
   }
+}
+
+// ---------------------------------------------------------------------------
+// Diagnostics helpers — map internal enum values to human-readable labels.
+// ---------------------------------------------------------------------------
+
+String _signalingLabel(SignalingClientStatus status) {
+  // Uses the enum name but maps the internal name 'connect' → 'connected'
+  // and 'disconnect' → 'disconnected' for readability.
+  switch (status) {
+    case SignalingClientStatus.connect:
+      return 'connected';
+    case SignalingClientStatus.disconnect:
+      return 'disconnected';
+    case SignalingClientStatus.failure:
+      return 'failed';
+    default:
+      return status.name; // 'connecting', 'disconnecting'
+  }
+}
+
+// RegistrationStatus is from webtrit_signaling — accessed via .name to avoid
+// importing the transitive package directly into tringup_call.
+String _registrationLabel(Object? status) {
+  if (status == null) return '—';
+  final name = status is Enum ? status.name : status.toString();
+  // Normalise the internal 'registration_failed' name.
+  if (name == 'registration_failed') return 'failed';
+  return name;
 }
 
 // ---------------------------------------------------------------------------

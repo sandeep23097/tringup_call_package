@@ -35,3 +35,4 @@ export 'package:webtrit_callkeep/webtrit_callkeep.dart'
     show CallkeepPushNotificationSyncStatus, CallKeepPushNotificationSyncStatusHandle;
 export 'src/tringup_call_status.dart';
 export 'src/tringup_call_status_stream.dart';
+export 'src/tringup_call_diagnostics.dart';

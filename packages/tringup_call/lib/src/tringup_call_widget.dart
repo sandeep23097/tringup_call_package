@@ -19,6 +19,7 @@ import 'stubs/stub_session_repository.dart';
 import 'tringup_call_config.dart';
 import 'tringup_call_contact.dart';
 import 'tringup_call_controller.dart';
+import 'tringup_call_diagnostics.dart';
 import 'tringup_call_shell.dart';
 
 const _tag = '[TringupCallWidget]';
@@ -76,6 +77,10 @@ class _TringupCallWidgetState extends State<TringupCallWidget> {
 
     _callBloc = _buildCallBloc(widget.config);
     if (kDebugMode) debugPrint('$_tag CallBloc created, CallStarted dispatched');
+
+    // Reflect token presence in diagnostics immediately on init.
+    TringupCallDiagnostics.instance
+        .updateTokenPresence(widget.config.token.isNotEmpty);
 
     // Persist credentials so the background push-notification isolate can
     // authenticate against the signaling server when the app is killed.
@@ -162,6 +167,8 @@ class _TringupCallWidgetState extends State<TringupCallWidget> {
     final oldToken = oldWidget.config.token;
     final newToken = widget.config.token;
     if (oldToken != newToken) {
+      // Keep diagnostics in sync whenever the token changes.
+      TringupCallDiagnostics.instance.updateTokenPresence(newToken.isNotEmpty);
       if (kDebugMode) {
         debugPrint('$_tag didUpdateWidget — token changed, rebuilding CallBloc '
             '(new token isEmpty=${newToken.isEmpty})');
